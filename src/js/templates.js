@@ -1,11 +1,13 @@
 const charcterFech = async (count = 10)=>{
+  // sincronico
+  // https://es.javascript.info/async-await
   let response = await fetch(
-    "https://thesimpsonsquoteapi.glitch.me/quotes?count="+count
+    "https://thesimpsonsquoteapi.glitch.me/quotes?count=" + count
   );
   return await response.json();
 }
 
-const characterPrint = (list = [], dom)=>{
+const characterPrint = (list = [], dom) => {
   dom.innerHTML = ""; 
   list.forEach((e) => {
     dom.innerHTML += generateCharacter(e);
